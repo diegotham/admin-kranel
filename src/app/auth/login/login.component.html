@@ -1,4 +1,4 @@
-<div class="login-box">
+<div class="login-box" *ngIf="!(isLoggingIn$ | async)">
     <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
         <mat-form-field class="full-width">
             <input matInput type="email" id="email" placeholder="Email" formControlName="email" required >
@@ -16,3 +16,9 @@
         <br>
     </form>
 </div>
+
+<ng-container *ngIf="isLoggingIn$ | async">
+    <div class="loading-indicator">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-container>

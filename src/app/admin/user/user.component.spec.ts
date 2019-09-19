@@ -14,7 +14,8 @@ describe('UserComponent', () => {
       declarations: [ UserComponent, UserListComponent ],
       imports: [
         AdminSharedModule,
-        RouterTestingModule.withRoutes([]), ]
+        RouterTestingModule.withRoutes([])
+      ]
     })
     .compileComponents();
   }));
@@ -27,5 +28,10 @@ describe('UserComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show loading indicator if users$ is not present', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.loading-indicator')).toBeTruthy();
   });
 });

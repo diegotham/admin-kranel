@@ -11,7 +11,6 @@ export class AdminLayoutComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.router.url);
   }
 
 }

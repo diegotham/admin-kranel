@@ -3,7 +3,6 @@ import { AdminSharedModule } from 'src/app/admin/shared/shared.module';
 import { AuthenticationService } from 'src/app/auth/auth.service';
 import { AuthGuard } from 'src/app/auth/auth.guard';
 import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
 
 class MockAuthenticationService {
     currentUserValue = {
@@ -21,7 +20,10 @@ describe('AuthGuard', () => {
   let authService: MockAuthenticationService;
 
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [AdminSharedModule, RouterTestingModule],
+    imports: [
+      AdminSharedModule,
+      RouterTestingModule.withRoutes([]),
+    ],
     providers: [
         { provide: AuthenticationService, useClass: MockAuthenticationService },
     ]

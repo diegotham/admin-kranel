@@ -28,4 +28,9 @@ describe('UserItemDialogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show loading indicator if no user is present', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.loading-indicator')).toBeTruthy();
+  });
 });

@@ -7,7 +7,6 @@ import {
   MatInputModule,
   MatDialogModule,
   MatTableModule,
-  MatIconModule,
   MatSortModule,
   MatMenuModule,
   MatProgressSpinnerModule
@@ -20,7 +19,6 @@ import {
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatIconModule,
     MatListModule,
     MatSortModule,
     MatMenuModule,
@@ -32,7 +30,6 @@ import {
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatIconModule,
     MatListModule,
     MatSortModule,
     MatMenuModule,

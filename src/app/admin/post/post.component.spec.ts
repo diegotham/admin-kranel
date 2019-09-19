@@ -14,7 +14,8 @@ describe('PostComponent', () => {
       declarations: [ PostComponent, PostListComponent ],
       imports: [
         AdminSharedModule,
-        RouterTestingModule.withRoutes([]), ]
+        RouterTestingModule.withRoutes([])
+      ]
     })
     .compileComponents();
   }));
@@ -27,5 +28,10 @@ describe('PostComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show loading indicator if posts$ is not present', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.loading-indicator')).toBeTruthy();
   });
 });

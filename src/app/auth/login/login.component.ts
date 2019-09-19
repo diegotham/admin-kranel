@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/auth/auth.service';
 import { User } from 'src/app/core/models/user';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error: string;
+  isLoggingIn$: Observable<boolean>;
 
   constructor(
     protected formBuilder: FormBuilder,
@@ -19,6 +21,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.isLoggingIn$ = this.authService.isLoggingIn$;
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
