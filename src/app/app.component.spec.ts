@@ -1,12 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatToolbarModule
       ],
       declarations: [
         AppComponent
@@ -20,16 +22,23 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'admin-kranel'`, () => {
+  it(`should have as title 'interfacema'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('admin-kranel');
+    expect(app.title).toEqual('Admin Kranel');
   });
 
-  it('should render title', () => {
+  it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('admin-kranel app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('Admin Kranel');
+  });
+
+  it('should render Code Test in the toolbar', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-toolbar .text-right').textContent).toContain('Code Test');
   });
 });

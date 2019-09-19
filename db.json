@@ -1,0 +1,48 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Emily",
+            "username": "emily",
+            "email": "emily@adminkranel.com",
+            "posts": 1,
+            "isAdmin": true
+        },
+        {
+            "id": 2,
+            "name": "Maria",
+            "username": "maria",
+            "email": "maria@adminkranel.com",
+            "posts": 1,
+            "isAdmin": false
+        },
+        {
+            "id": 3,
+            "name": "Jason",
+            "username": "jason",
+            "email": "jason@adminkranel.com",
+            "posts": 1,
+            "isAdmin": false
+        }
+    ],
+    "posts": [
+      {
+        "id": 1,
+        "title": "Post 1",
+        "username": "Emily"
+      },
+      {
+        "id": 2,
+        "title": "Post 2",
+        "username": "Maria"
+      },
+      {
+        "id": 3,
+        "title": "Post 3",
+        "username": "Jason"
+      }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }
