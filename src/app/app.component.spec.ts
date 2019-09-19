@@ -1,44 +1,72 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material';
+import { AuthenticationService } from 'src/app/auth/auth.service';
+import { AdminSharedModule } from 'src/app/admin/shared/shared.module';
+class MockAuthenticationService {
+  currentUserValue = {
+    id: 1,
+    name: 'Emily',
+    username: 'emily',
+    email: 'emily@adminkranel.com',
+    posts: 1,
+    isAdmin: true
+  };
+}
 
 describe('AppComponent', () => {
+  let authService: MockAuthenticationService;
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        MatToolbarModule
+        MatToolbarModule,
+        AdminSharedModule
       ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        { provide: AuthenticationService, useClass: MockAuthenticationService }
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    authService = TestBed.get(AuthenticationService);
+    fixture.detectChanges();
   });
 
-  it(`should have as title 'interfacema'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Admin Kranel');
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it(`should have as title 'Admin Kranel'`, () => {
+    expect(component.title).toEqual('Admin Kranel');
   });
 
   it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Admin Kranel');
   });
 
-  it('should render Code Test in the toolbar', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should render Code Test in the toolbar if user is not logged in', () => {
+    authService.currentUserValue = null;
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('mat-toolbar .text-right').textContent).toContain('Code Test');
+  });
+
+  it('should render Logout in the toolbar if user is logged in', () => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-toolbar .text-right').textContent).toContain('Logout');
   });
 });

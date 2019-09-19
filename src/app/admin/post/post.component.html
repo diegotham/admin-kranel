@@ -1,1 +1,10 @@
-<p>post works!</p>
+<app-admin-layout>
+    <app-post-list *ngIf="posts$ | async as posts else isLoading"
+        [posts]="posts">
+    </app-post-list>
+    <ng-template #isLoading>
+            <div class="loading-indicator">
+                <mat-spinner></mat-spinner>
+            </div>
+    </ng-template>
+</app-admin-layout>

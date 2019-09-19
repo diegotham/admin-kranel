@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.filter-box {
+    .mat-form-field {
+        width: 200px;
+    }
+}
+
+table {
+    width: 100%;
+}

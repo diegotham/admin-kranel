@@ -5,7 +5,7 @@
             "name": "Emily",
             "username": "emily",
             "email": "emily@adminkranel.com",
-            "posts": 1,
+            "postCount": 3,
             "isAdmin": true
         },
         {
@@ -13,7 +13,7 @@
             "name": "Maria",
             "username": "maria",
             "email": "maria@adminkranel.com",
-            "posts": 1,
+            "postCount": 3,
             "isAdmin": false
         },
         {
@@ -21,25 +21,76 @@
             "name": "Jason",
             "username": "jason",
             "email": "jason@adminkranel.com",
-            "posts": 1,
+            "postCount": 3,
+            "isAdmin": false
+        },
+        {
+            "id": 4,
+            "name": "Frederick",
+            "username": "frederick",
+            "email": "frederick@adminkranel.com",
+            "postCount": 0,
+            "isAdmin": false
+        },
+        {
+            "id": 4,
+            "name": "Thomas",
+            "username": "thomas",
+            "email": "thomas@adminkranel.com",
+            "postCount": 1,
             "isAdmin": false
         }
     ],
     "posts": [
       {
         "id": 1,
-        "title": "Post 1",
+        "title": "Post 1 - Story about trees",
         "username": "Emily"
       },
       {
         "id": 2,
-        "title": "Post 2",
+        "title": "Post 2 - Story about plants",
         "username": "Maria"
       },
       {
         "id": 3,
-        "title": "Post 3",
+        "title": "Post 3 - Trees and plants",
         "username": "Jason"
+      },
+      {
+        "id": 4,
+        "title": "Post 4 - Story about animals",
+        "username": "Jason"
+      },
+      {
+        "id": 5,
+        "title": "Post 5 - Animals in Berlin",
+        "username": "Maria"
+      },
+      {
+        "id": 6,
+        "title": "Post 6 - All about Berlin",
+        "username": "Maria"
+      },
+      {
+        "id": 7,
+        "title": "Post 7 - Berlin and Hamburg",
+        "username": "Emily"
+      },
+      {
+        "id": 8,
+        "title": "Post 8 - Plants in Berlin",
+        "username": "Emily"
+      },
+      {
+        "id": 9,
+        "title": "Post 9 - Plants and trees in Berlin",
+        "username": "Jason"
+      },
+      {
+        "id": 10,
+        "title": "Post 10 - Hamburg harbour",
+        "username": "Thomas"
       }
     ],
     "profile": {

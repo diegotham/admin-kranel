@@ -1,0 +1,10 @@
+<div class="app-layout">
+    <button mat-button color="primary"
+        [ngClass]="{'mat-raised-button': router.url === '/admin/users'}"
+        [routerLink]="['/admin', 'users']">Users</button>
+    <button mat-button color="primary"
+        [ngClass]="{'mat-raised-button': router.url === '/admin/posts'}"
+        [routerLink]="['/admin', 'posts']">Posts</button>
+</div>
+<ng-content></ng-content>
+      

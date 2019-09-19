@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { AppMaterialModule } from 'src/app/material/app-material.module';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'users' },
   {
     path: 'users',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
@@ -14,10 +16,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
     RouterModule.forChild(routes),
+    AppMaterialModule,
     CommonModule
-  ]
+  ],
 })
 export class AdminModule { }

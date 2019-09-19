@@ -1,0 +1,35 @@
+<div class="filter-box">
+    <mat-form-field>
+        <input matInput type="text" (keyup)="filterData($event.target.value)" placeholder="Filter by name, username or email">
+    </mat-form-field>
+</div>
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
+        <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+    </ng-container>
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+    </ng-container>
+    <!-- Posts Column -->
+    <ng-container matColumnDef="posts">
+        <th mat-header-cell *matHeaderCellDef> Posts </th>
+        <td mat-cell *matCellDef="let user"> {{user.posts}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row (click)="openUser(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

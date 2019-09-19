@@ -3,6 +3,7 @@
 
   <span class="fill-remaining-space"></span>
 
-  <span class="text-right">Code Test</span>
+  <span *ngIf="!currentUser" class="text-right">Code Test</span>
+  <button mat-button *ngIf="currentUser" class="text-right" (click)="logout()">Logout</button>
 </mat-toolbar>
 <router-outlet></router-outlet>

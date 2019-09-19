@@ -4,39 +4,39 @@ import {
   MatListModule,
   MatToolbarModule,
   MatButtonModule,
-  MatCardModule,
   MatInputModule,
   MatDialogModule,
   MatTableModule,
-  MatMenuModule,
   MatIconModule,
-  MatProgressSpinnerModule,
+  MatSortModule,
+  MatMenuModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule,
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatMenuModule,
     MatIconModule,
-    MatProgressSpinnerModule,
-    MatListModule
+    MatListModule,
+    MatSortModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule,
     MatInputModule,
     MatDialogModule,
     MatTableModule,
-    MatMenuModule,
     MatIconModule,
-    MatProgressSpinnerModule,
-    MatListModule
+    MatListModule,
+    MatSortModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
 })
 export class AppMaterialModule {}

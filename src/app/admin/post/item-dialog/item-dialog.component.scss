@@ -1,0 +1,18 @@
+.item-content {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+    .title {
+        background: darkcyan;
+        color: white;
+        padding: 30px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+}

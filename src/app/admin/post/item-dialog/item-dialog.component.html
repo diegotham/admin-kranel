@@ -1,0 +1,18 @@
+<div class="item-content" mat-dialog-content>
+    <ng-container *ngIf="post$ | async as post else isLoading">
+        <div class="title">{{post.title}}</div>
+        <mat-list>
+                <mat-list-item><span class="label">Id:</span> {{post.id}} </mat-list-item>
+                <mat-list-item><span class="label">Title:</span> {{post.title}} </mat-list-item>
+                <mat-list-item><span class="label">Username:</span> {{post.username}} </mat-list-item>
+        </mat-list>
+    </ng-container>
+
+    <button mat-button color="primary" (click)="close()">Cerrar</button>
+
+    <ng-template #isLoading>
+        <div class="loading-indicator">
+            <mat-spinner></mat-spinner>
+        </div>
+    </ng-template>
+</div>

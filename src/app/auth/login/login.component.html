@@ -10,7 +10,7 @@
             <input matInput type="password" id="password" placeholder="Password" formControlName="password" required >
         </mat-form-field>
         <div *ngIf="error" class="error">
-                <p>{{error}}</p>
+                {{error}}
         </div>
         <button mat-raised-button color="primary" [disabled]="!loginForm.valid" type="submit">Login</button>
         <br>

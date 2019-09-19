@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostComponent } from './post.component';
+import { AdminSharedModule } from 'src/app/admin/shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { PostListComponent } from 'src/app/admin/post/list/list.component';
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,7 +11,10 @@ describe('PostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      declarations: [ PostComponent, PostListComponent ],
+      imports: [
+        AdminSharedModule,
+        RouterTestingModule.withRoutes([]), ]
     })
     .compileComponents();
   }));
